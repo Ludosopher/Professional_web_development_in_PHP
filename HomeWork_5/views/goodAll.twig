@@ -1,0 +1,14 @@
+<div class = 'img_block'>
+    {% for user in users %}
+        <div>
+            <a href="index.php?c={{ good }}&a={{ one }}&id={{ good.id|e }}>"><img src = "img/{{ good.file_name|e }}>"></a>
+            <h3>{{ good.product_name|e }}</h3>
+            <p>Цена: {{ good.price|e }}$</p>
+            <a href="#">Заказать</a>
+        </div>
+    {% endfor %}
+</div>
+{# {{ app.request.query.get("page") }}
+{{ app.request.parameter.get("login") }} #}
+{# <a href="?c = {% set c = good %}&a={% set a = one %}&id={% set id = good.id %}"><img src = "img/{{ good.file_name|e }}"></a> #}
+
