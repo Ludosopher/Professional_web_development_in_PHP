@@ -1,0 +1,16 @@
+{% extends 'layouts/main.twig' %}
+
+{% block content %}
+
+<div class = 'img_block'>
+    {% for good in goods %}
+        <div>
+            <a href="/good/one?id={{ good.id|e }}"><img src = "/img/{{good.file_name}}"></a>
+            <h3>{{ good.product_name|e }}</h3>
+            <p>Цена: {{ good.price|e }}$</p>
+            <a href="/basket/add?id={{ good.id|e }}">В корзину</a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

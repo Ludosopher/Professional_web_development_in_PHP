@@ -1,0 +1,10 @@
+{% extends 'layouts/main.twig' %}
+
+{% block content %}
+    
+        <h1>Личный кабинет</h1>
+        <h2>{{user.name|e}}, добро пожаловать!</h2>
+        <a href="/user/ordersItems">Мои заказы</a>
+        <a href="/user/exit">Выйти</a>
+    
+{% endblock %}
