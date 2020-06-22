@@ -1,0 +1,35 @@
+{% extends 'layouts/main.twig' %}
+
+{% block content %}
+    
+    <div class="product">
+        <img src = "/img/{{good.file_name|e}}">
+        <h3>{{good.product_name|e}}</h3>
+        <p> Цена: {{good.price|e}}$</p>
+        <p>Число просмотров: {{good.views|e}}</p>
+        <a href="/basket/add?id={{ good.id|e }}&no_view=true">В корзину</a>
+        <a href="/good/all">Назад</a>
+    </div>
+
+    <div>
+        <h3>Оставить свой отзыв</h3>
+        <form method="post">
+            <label for="author">Укажите своё имя:</label>
+            <input id="author" type="text" name="author"><br>
+            <label for="text">Напишите свой отзыв:</label><br>
+            <textarea id="text" rows="10" cols="45" name="text"></textarea><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class = 'all_feedback'>
+        <h3>Отзывы о товаре</h3>
+        {% for commet in feedback %}   
+            <div>    
+                <b><p>{{commet.author|e}}: {{commet.date|e}}</p></b>
+                <p>{{commet.text|e}}</p>
+            </div><hr>
+        {% endfor %}  
+    </div>
+    
+{% endblock %}
